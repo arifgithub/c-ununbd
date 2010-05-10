@@ -11,7 +11,9 @@
 |	http://example.com/
 |
 */
-if($_SERVER['SERVER_NAME']=='localhost'){
+if($_SERVER['SERVER_NAME']=='localhost' && $_SERVER['SERVER_PORT']==80){
+	$config['base_url']	= "http://localhost/public_html/c_projects/Auny/ununbd/";
+}elseif($_SERVER['SERVER_NAME']=='localhost'){
 	$config['base_url']	= "http://localhost:83/c_projects/Auny/ununbd/";
 }else{
 	$config['base_url']	= "http://{$_SERVER['HTTP_HOST']}/";
