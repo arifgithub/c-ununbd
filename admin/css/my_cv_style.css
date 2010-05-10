@@ -1,0 +1,241 @@
+html
+{
+  font-size:12px;
+  
+}
+#wrapper
+{
+	width:950px;
+	margin:2px auto;
+	text-align:center;
+}
+
+#container
+{
+	  border:1px solid #CCCCCC;
+	  height:auto;
+}
+
+#header
+{
+   width:100%;
+   height:30px;
+   border-bottom:1px solid #CCCCCC;
+   background-color:#F3F3F5;
+}
+#header .lft
+{
+	float:left;
+	margin-left:10px;
+}
+ #header .rht 
+ {
+ 	float:right;
+ 	margin-right:10px;
+ }
+  #header  .btn
+  {
+  	border:1px solid #CCCCCC;
+  	margin-top:5px;
+  	height:20px;
+  	cursor:pointer;
+  }
+#main
+{
+   width:800px;
+   margin:0px auto;
+}
+
+#stat
+{
+	height:100px;
+	width:100%;
+	text-align:left;
+	margin-top:10px;
+	color:#6E6E6E;
+}
+hr
+{
+  color:#CCCCCC;
+}
+#tool-bar
+{
+   background-color:#F3F3F5;
+   width:100%;
+   height:20px;
+   padding-top:20px;
+   text-align:right;
+}
+#tool-bar .icon-cont
+{
+	float:right;
+	margin-right:10px;
+}
+.icon-cont span
+{
+    font-weight:bold;
+    color:#223266;
+}
+
+#cv 
+{
+  text-align:left;
+  margin-top:10px;
+}
+#cv .header
+{
+  float:left;
+  width:100%;
+  padding-bottom:15px;
+  border-bottom:1px solid #000000;
+}
+#cv .header .info
+{
+	width:70%;
+	float:left;
+	clear:both;
+}
+#cv .header .info h2
+{
+ color:#333399;
+}
+#cv .header img
+{
+  float:right;
+  border:1px solid #CCCCCC;
+  width:100px;
+  height:120px;
+  margin-right:5px;
+}
+#cv .body
+{
+	margin-top:15px;
+	width:100%;
+	color:#000000;
+	text-align:justify;
+}
+#cv .body h3
+{
+	font-size:1em;
+	text-decoration:underline;
+	color:#000000;
+	background-color:#F3F3F5;
+	line-height:20px;
+	
+}
+#cv .body div p, #cv .body div h4, #cv .body b
+{
+  font-size:0.9em;
+}
+#cv .body div ul
+{
+	list-style-type:decimal;
+	list-style-position: outside;
+}
+#cv .body div ul li h4
+{
+	text-decoration:underline;
+}
+#cv .body div table
+{
+	width:100%;
+	border-right:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+#cv .body div table th
+{
+  font-size:0.9em;
+   border-top:1px solid #CCCCCC;
+   border-left:1px solid #CCCCCC;
+   text-align:center;
+}
+#cv .body div table .lbl
+{
+	width:40%;
+	text-align:left;
+}
+#cv .body div table .txt
+{
+	width:60%;
+	text-align:left;
+}
+
+#cv .body  table td 
+{
+	padding-left:10px;
+}
+#cv .body div table td
+{
+	text-align:left;
+	border-top:1px solid #CCCCCC;
+	border-left:1px solid #CCCCCC;
+}
+#cv .body div table td ul
+{
+	margin-left:10px;
+	list-style:circle;
+}
+#cv .lp td
+{
+	text-align:center !important;
+}
+
+#cv .pi td , #cv .pi table, #cv .pi th
+{
+  border:0 !important;
+}
+#cv .ci td , #cv .ci table, #cv .ci th
+{
+  border:0 !important;
+}
+#cv .ref td , #cv .ref table, #cv .ref th
+{
+  border:0 !important;
+  text-align:left !important;
+}
+.clr
+{
+  clear:both;
+}
+
+/********** POPUP ***********/
+
+#popup-win
+{
+	width:400px;
+	height:auto;
+	
+}
+#popup-win .form
+{
+	margin:20px auto;
+}
+#popup-win .form label
+{
+	clear:left;
+	display:block;
+	float:left;
+	margin-bottom:5px;
+	padding-right:10px;
+	text-align:right;
+	width:110px;
+
+}
+#popup-win .form textarea
+{
+	border:1px solid #CCCCCC;
+}
+#popup-win .form .btn
+{
+	border:1px solid #CCCCCC;
+  	margin-top:5px;
+  	height:20px;
+  	cursor:pointer;
+  	margin-left:120px;
+}
+.msg
+{
+	float:left;
+	margin-left:10px;
+	color:#00A651;
+}

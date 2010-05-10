@@ -1,0 +1,151 @@
+html{
+  font-family:Arial;
+}
+#content{
+  text-align:center;
+  
+}
+#container{
+  text-align:center;
+  margin:120px auto;
+  width:55%;
+}
+ div.t{
+background:#EF2D35 url(../images/j_border.png) 100% 0 repeat-x;
+}
+div.t div.t{
+background:transparent url(../images/j_crn_tl_med.png) 0 0 no-repeat;
+}
+div.t div.t div.t{
+background:transparent url(../images/j_crn_tr_med.png) 100% 0 no-repeat;
+}
+div.t, div.b {
+height:6px;
+margin:0pt;
+overflow:hidden;
+padding:0pt;
+}
+
+div.m {
+padding:0pt;
+}
+div.m {
+border-left:1px solid #CCCCCC;
+border-right:1px solid #CCCCCC;
+}
+
+ div.b{
+  background: url(../images/j_border.png) 0 100% repeat-x;
+}
+div.b div.b{
+   background: url(../images/j_crn_br_med.png) 100% 0 no-repeat;
+}
+div.b div.b div.b{
+   background: url(../images/j_crn_bl_med.png) 0 0 no-repeat;
+}
+
+div#login-container{
+
+
+}
+div.title{
+text-align:center;
+background-color:#EF2D35;
+width:100%;
+color: white;
+font-weight:bold;
+border-bottom:1px dashed gray;
+padding-bottom:2px;
+text-transform:capitalize;
+}
+div#login-left,div#login-right{
+float:left;
+margin-left:5px;
+}
+div#login-left{
+width:30%;
+background-color:#fcfcfc;
+text-align:center;
+}
+div#login-left span{
+padding-top:10px;
+font-size:0.8em;
+}
+div#login-left img{
+margin:10px;
+border:0;
+}
+div#login-right{
+width:60%;
+padding-top:20px;
+}
+
+form p{
+clear: left;
+margin: 0;
+width:100%;
+padding:5px 0 3px 0;
+}
+
+form label{
+font-weight: bold;
+float: left;
+width: 30%; 
+text-transform:capitalize;
+text-align:right;
+}
+
+.txt-box{
+width: 68%;
+border: 1px solid gray;
+height:25px;
+vertical-align:middle;
+font-size:1.2em;
+}
+
+/*.threepxfix class below:
+Targets IE6- ONLY. Adds 3 pixel indent for multi-line form contents.
+to account for 3 pixel bug: http://www.positioniseverything.net/explorer/threepxtest.html
+*/
+
+* html .threepxfix{
+margin-left: 3px;
+}
+
+.formbutton{
+margin-left:28px;
+cursor:pointer;
+border:outset 1px #ccc;
+background:#999;
+color:#666;
+font-weight:bold;
+padding: 1px 2px;
+background:url(media/formbg.gif) repeat-x left top;
+}
+
+span.verr {
+   margin: 0px 5px 0px 5px;
+   padding: 1px 2px 1px 2px;
+   color: #FF0000;
+   background: #FFFFF3;
+   border: 1px solid #cccccc;
+   text-align: left;
+   clear: right;
+   font-size:9pt;
+}
+.err{
+   margin: 5px 0 5px 5px;
+   padding: 2px 3px 2px 3px;
+   color: #FF0000;
+   background: #FFFFF3;
+   border: 1px solid #cccccc;
+   text-align: left;
+   clear: right;
+   text-transform:capitalize;
+   font-size:0.9em;
+  }
+
+
+
+
+

@@ -1,0 +1,18 @@
+.lft-fld-cont, .right-fld-cont
+{
+   width:49%;
+   float:left;
+}
+
+form#form label
+{
+  width: 150px !important; 
+}
+.text
+{
+  width:150px !important;
+}
+.clr
+{
+    clear:both;
+}
