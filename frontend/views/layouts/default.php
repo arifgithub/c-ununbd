@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>UNUN :: Restaurant</title>
+<title><?=$page_title?></title>
 
 <link rel="icon" href="<?=$base_url?>images/logo-2.jpg" type="image/x-icon" />
 <link rel="shortcut icon" href="<?=$base_url?>images/logo-2.jpg" type="image/x-icon" />
@@ -26,29 +26,29 @@
 	     </div>
      </div>
      <div id="nav">
-     	<div id="left">
-	     	<a href="<?=$site_url;?>home">Home</a> &nbsp;|&nbsp; 
-	     	<a href="#">Reservation</a> &nbsp;|&nbsp; 
-	     	<a href="#">Photo Gallery</a> &nbsp;|&nbsp; 
-	     	<a href="#">About us</a> &nbsp;|&nbsp; 
-	     	<a href="#">Contact us</a>
-     	</div>
-     	<div id="right">
+     	<ul id="left">
+     		<li><a href="<?=$site_url;?>home">Home</a></li>
+	     	<li><a href="<?=$site_url;?>reservation">Reservation</a></li>
+	     	<li><a href="<?=$site_url;?>home/under_construction">Photo Gallery</a></li>
+	     	<li><a href="<?=$site_url;?>home/about_us">About us</a></li>
+	     	<li><a href="<?=$site_url;?>home/contact_us">Contact us</a></li>
+     	</ul>
+     	<ul id="right">
      		<?php 
      		if($this->session->userdata('user_name')){
      		?>
-     		Welcome '<?php echo $this->session->userdata('user_name');?>' ! &nbsp; 
-	     	<a href="<?=$site_url;?>home/logout">Logout</a> &nbsp;|&nbsp; 
+     		<li>Welcome '<?php echo $this->session->userdata('user_name');?>' ! &nbsp; 
+	     	<a href="<?=$site_url;?>home/logout">Logout</a></li>
      		<?php 	
      		}else{
      		?>
-	     	<a href="<?=$site_url;?>home/login">Login</a> &nbsp;|&nbsp; 
+	     	<li><a href="<?=$site_url;?>home/login">Login</a></li>
      		<?php 	
      		}
      		?>
-	     	<a href="<?=$site_url;?>home/signup">Signup</a> &nbsp;|&nbsp; 
-	     	<a href="<?=$site_url;?>feedback">Feedback</a> 
-     	</div>
+	     	<li><a href="<?=$site_url;?>home/signup">Signup</a></li>
+	     	<li><a href="<?=$site_url;?>feedback">Feedback</a></li> 
+     	</ul>
      </div>
   </div>
   <?=$content_for_layout?>

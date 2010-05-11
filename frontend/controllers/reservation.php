@@ -4,24 +4,26 @@
  *
  * Created by Arena Development Team(@ Reza Ahmed  & shuvankar Halder)
  */
-class Home extends MyCI_Controller
+class Reservation extends MyCI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('homemodel');
+		$this->load->model('reservationmodel');
+		$this->load->library('form_validation');
 	}
 
 	function index()
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: Home');
-		$this->load->view('home/home_page', $data);
+		$this->tpl->set_page_title('UNUN :: Reservation');
+		$settings = $this->reservationmodel->get_system_settings();
+		$data['total_table'] = $settings['total_table'];
+		$data['time_slot'] = $this->reservationmodel->get_time_slot();
+		$this->load->view('reservation', $data);
 	}
 
-	function login()
+	function submit()
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: Login');
-		
 		$config[] = array(
 			'field'   => "user_name",
 			'label'   => '"User Name"',
@@ -33,7 +35,6 @@ class Home extends MyCI_Controller
 		'rules'   => 'trim|required'
 		);
 
-		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="red">', '</span>');
 		if ($this->form_validation->run() == FALSE){
@@ -66,7 +67,6 @@ class Home extends MyCI_Controller
 
 	function signup($action="")
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: Signup');
 		$this->load->library('form_validation');
 
 		if($action=='save'){
@@ -124,19 +124,16 @@ class Home extends MyCI_Controller
 	
 	function about_us()
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: About Us');
 		$this->load->view('home/about_us');
 	}
 
 	function contact_us()
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: Contact Us');
 		$this->load->view('home/contact_us');
 	}
 
 	function under_construction()
 	{
-		$this->tpl->set_page_title('UNUN - Restaurant :: Under construction page');
 		$this->load->view('home/under_construction');
 	}
 }

@@ -4,120 +4,57 @@
  *
  * Created by Arena Development Team(@ Reza Ahmed  & shuvankar Halder)
  */
-class Home extends MyCI_Controller
+class Feedback extends MyCI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('homemodel');
+		$this->load->model('feedbackmodel');
+		$this->load->library('form_validation');
 	}
 
 	function index()
 	{
-		$this->tpl->set_page_title('UNUN :: Home');
-		$this->load->view('home/home_page', $data);
+		$this->tpl->set_page_title('UNUN - Restaurant :: Feedback');
+		$this->load->view('feedback', $data);
 	}
 
-	function login()
+	function submit()
 	{
+		$this->tpl->set_page_title('UNUN - Restaurant :: Feedback');
 		$config[] = array(
-			'field'   => "user_name",
-			'label'   => '"User Name"',
+			'field'   => "full_name",
+			'label'   => '"Full Name"',
 			'rules'   => 'trim|required'
-			);
-			$config[] = array(
-		'field'   => "user_password",
-		'label'   => '"Password"',
+		);
+		$config[] = array(
+		'field'   => "contact",
+		'label'   => '"Contact Number"',
+		'rules'   => 'trim|required'
+		);
+		$config[] = array(
+		'field'   => "message",
+		'label'   => '"Message"',
 		'rules'   => 'trim|required'
 		);
 
-		$this->load->library('form_validation');
 		$this->form_validation->set_rules($config);
 		$this->form_validation->set_error_delimiters('<span class="red">', '</span>');
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('home/login');
+			$this->load->view('feedback');
 		}else{
-			if($this->homemodel->check_user_login()){
-				$row = $this->homemodel->get_user_info($this->input->post('user_name'));
-				$this->session->set_userdata($row);
-				redirect(site_url()."/home/");
+			$ok = $this->feedbackmodel->submit();
+			if($ok){
+			$msg = '<h1>Thank you for submitting your comments!</h1>';
+			$this->tpl->assign('message', $msg);
+			$this->load->view('home/message');
 			}else{
-				$this->tpl->assign('msg', '<span>warning:</span> User name / Password is incorrect!');
-				$this->load->view('home/login');
+				$this->tpl->assign('msg', '<span>warning:</span> Error occurred. Please try again later.');
+				$this->load->view('feedback');
 			}
 		}
 	}
 
-	function logout()
-	{
-		$reset = array(
-		'user_name'=>'',
-		'user_password'=>'', 
-		'full_name'=>'', 
-		'contact'=>'', 
-		'email'=>'', 
-		'address'=>''
-		);
-		$this->session->unset_userdata($reset);
-		redirect(site_url()."/home/");
-	}
-
-	function signup($action="")
-	{
-		$this->load->library('form_validation');
-
-		if($action=='save'){
-			$config = $this->signup_validation_config();
-			$this->form_validation->set_rules($config);
-			$this->form_validation->set_error_delimiters('<span class="red">', '</span>');
-			if ($this->form_validation->run() == FALSE){
-				$this->load->view('home/signup');
-			}else{
-				if(!$this->homemodel->is_user_name_exists($this->input->post('user_name'))){
-					$this->homemodel->signup();
-					$msg = '<h1>Thank you for subscription!</h1><h4>Click <a href="'.site_url().'/home/login">here</a> to login.</h4>';
-					$this->tpl->assign('message', $msg);
-					$this->load->view('home/message');
-				}else{
-					$this->tpl->assign('msg', '<span>warning:</span> User name exists. Choose another please!');
-					$this->load->view('home/signup');
-				}
-			}
-		}else{
-			$this->load->view('home/signup');
-		}
-	}
-
-	function signup_validation_config()
-	{
-		$config[] = array(
-			'field'   => "user_name",
-			'label'   => '"User name"',
-			'rules'   => 'trim|required'
-			);
-			$config[] = array(
-			'field'   => "user_password",
-			'label'   => '"Password"',
-			'rules'   => 'trim|required|matches[user_password_confirm]'
-			);
-			$config[] = array(
-			'field'   => "user_password_confirm",
-			'label'   => '"Confirm password"',
-			'rules'   => 'trim|required'
-			);
-			$config[] = array(
-			'field'   => "full_name",
-			'label'   => '"Full name"',
-			'rules'   => 'trim|required'
-			);
-			$config[] = array(
-			'field'   => "contact",
-			'label'   => '"Contact number"',
-			'rules'   => 'trim|required'
-			);
-
-			return $config;
-	}
 
 }
 ?>
