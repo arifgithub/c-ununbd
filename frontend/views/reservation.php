@@ -7,20 +7,25 @@
       <td class="page_message"><?=$msg;?></td>
     </tr>
     <tr>
-    	<td>
+    	<td style="padding-right:50px;">
     		<?php
 			for($i=1; $i<=$total_table; $i++)
 			{
 			?>
-	    	<fieldset id="set_<?=$i;?>" style="border:1px solid #ccc">
+	    	<fieldset id="set_<?=$i;?>" style="border:1px solid #ccc; line-height: 40px;">
 				<input name="hid_table[<?=$i;?>]" id="hid_counter_<?=$i;?>" value="<?=$i;?>" type="hidden">
 				<legend>Table-<?=$i;?></legend>
 				<?php
+				$x=1;
 				foreach($time_slot as $key => $val)
 				{
 				?>
-				<input type="checkbox" value="<?=$val['id']?>" /><?=date('h:mA',strtotime($val['start_time'])).' to '.$val['end_time'];?>
-				<?php 
+				<input type="checkbox" value="<?=$val['id']?>" /><?=date('h:ia',strtotime($val['start_time'])).' To '.date('h:ia',strtotime($val['end_time']));?>&nbsp;&nbsp;
+				<?php
+					if(($x%4)==0){
+						echo "<br />";
+					}
+					$x++; 
 				}
 				?>
 			</fieldset>
