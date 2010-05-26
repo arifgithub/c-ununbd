@@ -1,4 +1,15 @@
-<div id="bg"></div>
+<?php 
+unset($_SERVER['PHP_AUTH_USER']);
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+    header('WWW-Authenticate: Basic realm="My Realm"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'Text to send if user hits Cancel button';
+    exit;
+} else {
+    echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
+    echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
+}
+?>
 <div class="page_body_title">
 	<h1>Reservation</h1>
 	<form id="form1" name="form1" method="post" action="<?=$site_url?>reservation/submit">
@@ -20,7 +31,7 @@
 				foreach($time_slot as $key => $val)
 				{
 				?>
-				<input type="checkbox" value="<?=$val['id']?>" /><?=date('h:ia',strtotime($val['start_time'])).' To '.date('h:ia',strtotime($val['end_time']));?>&nbsp;&nbsp;
+				<input type="checkbox" value="<?=$val['id']?>" /><?=date('h:ia',strtotime($val['start_time'])).' <b>To</b> '.date('h:ia',strtotime($val['end_time']));?>&nbsp;&nbsp;
 				<?php
 					if(($x%4)==0){
 						echo "<br />";

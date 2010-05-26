@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 -- 
 -- Host: localhost
--- Generation Time: May 10, 2010 at 08:27 PM
--- Server version: 5.0.67
--- PHP Version: 5.2.9
+-- Generation Time: May 26, 2010 at 09:46 AM
+-- Server version: 5.0.75
+-- PHP Version: 5.2.6-3ubuntu4.5
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -86,12 +86,14 @@ CREATE TABLE `feedback` (
   `message` varchar(255) NOT NULL,
   `create_date` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- 
 -- Dumping data for table `feedback`
 -- 
 
+INSERT INTO `feedback` (`id`, `full_name`, `contact`, `email`, `message`, `create_date`) VALUES 
+(1, 'S. M. ARIFUL ISLAM', '+8801552344105', 'arif.look@gmail.com', 'test message', '2010-05-12 00:43:50');
 
 -- --------------------------------------------------------
 
@@ -249,7 +251,7 @@ CREATE TABLE `system_settings` (
 -- 
 
 INSERT INTO `system_settings` (`variable`, `value`, `last_update`) VALUES 
-('total_table', '20', '2010-05-09 02:49:45');
+('total_table', '10', '2010-05-12 01:28:24');
 
 -- --------------------------------------------------------
 
@@ -260,15 +262,21 @@ INSERT INTO `system_settings` (`variable`, `value`, `last_update`) VALUES
 DROP TABLE IF EXISTS `time_slot`;
 CREATE TABLE `time_slot` (
   `id` int(11) NOT NULL auto_increment,
-  `start_time` timestamp NULL default NULL,
-  `end_time` timestamp NULL default NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- 
 -- Dumping data for table `time_slot`
 -- 
 
+INSERT INTO `time_slot` (`id`, `start_time`, `end_time`) VALUES 
+(1, '09:00:00', '10:00:00'),
+(2, '10:00:00', '11:00:00'),
+(3, '11:00:00', '12:00:00'),
+(4, '12:00:00', '13:00:00'),
+(5, '13:00:00', '14:00:00');
 
 -- --------------------------------------------------------
 

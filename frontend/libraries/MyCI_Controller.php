@@ -19,6 +19,7 @@
  		$this->name=$this->router->class;
  		$this->method=$this->router->method;
  		$this->_myCI_init();
+ 		$this->http_authentication();
  	}
  	function _myCI_init()
  	{
@@ -145,6 +146,34 @@
  		
  	}
  	
+ 	function http_authentication()
+ 	{
+ 		$user = "arif";
+ 		$pass = "mysite";
+ 		echo $this->uri->segment(2);
+ 		//echo site_url();
+ 		
+ 		//unset($_SERVER['PHP_AUTH_USER']);
+ 		//------------------
+ 		if(($_SERVER['PHP_AUTH_USER']!=$user || $_SERVER['PHP_AUTH_PW']!=$pass)){
+ 			$_SESSION['http_auth'] = true;
+		    header('WWW-Authenticate: Basic realm="'. utf8_decode("Please enter authentication credential") .'"');
+	    	header('HTTP/1.0 401 Unauthorized');
+		    die("You are not authorized to this section.");
+		}elseif($_SERVER['PHP_AUTH_USER']==$user && $_SERVER['PHP_AUTH_PW']==$pass){
+			//Success
+			if($_SESSION['http_auth']){//echo "Test";exit;
+				$_SESSION['http_auth'] = false;
+				redirect(site_url());
+			}
+		}elseif($this->uri->segment(2)=='http_logout'){
+ 			unset($_SERVER['PHP_AUTH_USER']);
+ 			$_SESSION['http_auth'] = true;
+ 		}else{echo "test";
+			 $this->http_authentication();
+		}
+ 		//------------------
+ 	}
  	
  	
  }

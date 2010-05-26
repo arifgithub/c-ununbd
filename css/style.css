@@ -108,11 +108,13 @@ input, textarea{
 	border-right : 1px solid #f0e9eb;
 }
 #header {
-	margin : 0 1px;
+	margin : 0 -1px;
 }
 #bg {
 	height : 36px;
 	background : url(../images/bg.gif) repeat-x;
+	border-left: 1px solid #F0E9EB;
+	border-right: 1px solid #F0E9EB;
 }
 #nav {
 	background : #7a2e40;
@@ -141,11 +143,14 @@ input, textarea{
 	background-color: #9F3B54;
 }
 #main-content {
-	margin : 0 auto;
+	margin : 20px auto;
 }
 #logo {
 	margin-bottom : 45px;
 	padding-left: 20px;
+}
+#body_content{
+	padding-top:20px;
 }
 .logotxt1 {
 	font : normal 24px Georgia, serif;

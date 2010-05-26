@@ -24,6 +24,7 @@
 		     <span class="logotxt1">unun</span><span class="logotxt2"> Restaurant</span><br />
 		     <span style="margin-left:15px;font-size:10px;">Your Slogan goes here</span>
 	     </div>
+	     <a href="<?php echo site_url()?>/home/http_logout/">Logout</a>
      </div>
      <div id="nav">
      	<ul id="left">
@@ -51,7 +52,9 @@
      	</ul>
      </div>
   </div>
-  <?=$content_for_layout?>
+  <div id="body_content">
+  	<?=$content_for_layout?>
+  </div>
   <div id="footer">
   	Copyright &copy; 2010 unun Restaurant, All rights reserved.<br />
    </div>

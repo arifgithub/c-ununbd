@@ -1,5 +1,4 @@
 <div id="main-content">
-    <div id="bg"></div>
     <div id="left-column">
       <div class="box">
         <h1>Your Restaurant Related Some Text</h1>
