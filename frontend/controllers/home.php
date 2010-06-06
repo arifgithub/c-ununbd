@@ -13,7 +13,8 @@ class Home extends MyCI_Controller
 	}
 
 	function index()
-	{printr($_SERVER);
+	{
+		//printr($_SERVER);
 		$this->tpl->set_page_title('UNUN - Restaurant :: Home');
 		$this->load->view('home/home_page', $data);
 	}
@@ -66,9 +67,8 @@ class Home extends MyCI_Controller
 	
 	function http_logout()
 	{
-		unset($_SERVER['PHP_AUTH_USER']);
-		unset($_SERVER['PHP_AUTH_PW']);
-		exit;
+		//unset($_SERVER['PHP_AUTH_USER']);
+		$_SESSION['http_auth'] = false;
 		//redirect(site_url());
 	}
 

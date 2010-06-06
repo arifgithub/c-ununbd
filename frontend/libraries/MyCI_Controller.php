@@ -148,31 +148,33 @@
  	
  	function http_authentication()
  	{
+ 		//echo printr($_SERVER);
  		$user = "arif";
  		$pass = "mysite";
- 		echo $this->uri->segment(2);
- 		//echo site_url();
  		
- 		//unset($_SERVER['PHP_AUTH_USER']);
  		//------------------
- 		if(($_SERVER['PHP_AUTH_USER']!=$user || $_SERVER['PHP_AUTH_PW']!=$pass)){
- 			$_SESSION['http_auth'] = true;
-		    header('WWW-Authenticate: Basic realm="'. utf8_decode("Please enter authentication credential") .'"');
-	    	header('HTTP/1.0 401 Unauthorized');
-		    die("You are not authorized to this section.");
+ 		$_SESSION['http_auth'] = isset($_SESSION['http_auth']) ? $_SESSION['http_auth'] : false;
+ 		
+ 		if($this->uri->segment(2)=='http_logout' && !$_SESSION['http_auth']){
+ 			$this->ask_auth();
+ 		}elseif($this->uri->segment(2)=='http_logout' && $_SESSION['http_auth']){
+ 			$_SESSION['http_auth'] = false;
+ 		}elseif($_SESSION['http_auth']){
+ 			//SUCCESS - Nothing to do here.	
+ 		}elseif(($_SERVER['PHP_AUTH_USER']!=$user || $_SERVER['PHP_AUTH_PW']!=$pass)){
+ 			$this->ask_auth();
 		}elseif($_SERVER['PHP_AUTH_USER']==$user && $_SERVER['PHP_AUTH_PW']==$pass){
 			//Success
-			if($_SESSION['http_auth']){//echo "Test";exit;
-				$_SESSION['http_auth'] = false;
-				redirect(site_url());
-			}
-		}elseif($this->uri->segment(2)=='http_logout'){
- 			unset($_SERVER['PHP_AUTH_USER']);
- 			$_SESSION['http_auth'] = true;
- 		}else{echo "test";
-			 $this->http_authentication();
+			$_SESSION['http_auth'] = true;
 		}
- 		//------------------
+		//------------------
+ 	}
+ 	
+ 	function ask_auth()
+ 	{
+ 		header('WWW-Authenticate: Basic realm="'. utf8_decode("Please enter authentication credential") .'"');
+    	header('HTTP/1.0 401 Unauthorized');
+	    die("You are not authorized to this section.<a href='".site_url()."'>Try to Login</a>");
  	}
  	
  	

@@ -24,7 +24,9 @@
 		     <span class="logotxt1">unun</span><span class="logotxt2"> Restaurant</span><br />
 		     <span style="margin-left:15px;font-size:10px;">Your Slogan goes here</span>
 	     </div>
-	     <a href="<?php echo site_url()?>/home/http_logout/">Logout</a>
+	     <?php if(isset($_SESSION['http_auth']) && $_SESSION['http_auth']=='arif'):?>
+	     	<a href="<?php echo site_url()?>/home/http_logout/">Logout</a>
+	     <?php endif;?>
      </div>
      <div id="nav">
      	<ul id="left">
