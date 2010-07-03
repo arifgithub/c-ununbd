@@ -1,7 +1,7 @@
 /*** Global Settings ****/
 html, body {
 	background: url("../images/base_bg.gif") repeat-x scroll center top #B42D50;
-	color : #2a3845;
+	color : #fff;
 	font-family:tahoma;
 	font-size:12px;
 	height:100%;
@@ -30,14 +30,14 @@ a:hover {
 	border-bottom : 1px solid #efece7;
 }
 #left-column h2 {
-	color : #7a2e40;
+	color : #fff;
 	margin : 20px 0 10px;
 	padding-bottom : 10px;
 	font : normal 17px Georgia, serif;
 	border-bottom : 1px solid #efece7;
 }
 .sidebar h3 {
-	color : #7a2e40;
+	color : #fff;
 	margin : 10px 0;
 	padding-bottom : 10px;
 	font : bold 14px Arial, Helvetica, sans-serif;
@@ -55,6 +55,7 @@ input, textarea{
 	background : #f7f7f7;
 	border : 1px solid #f0e9eb;
 	padding : 15px;
+	color: #666;
 }
 .clear{
 	clear: both;
@@ -64,7 +65,7 @@ input, textarea{
 }
 .page_body_title h1 {
 	border-bottom:1px solid #EFECE7;
-	color:#7A2E40;
+	color:#FFF;
 	font:17px Georgia,serif;
 	margin:0 0 10px;
 	padding-bottom:10px;
@@ -110,14 +111,18 @@ input, textarea{
 	width : 776px;
 	border-left : 1px solid #f0e9eb;
 	border-right : 1px solid #f0e9eb;
-	background-color: #FFFFFF;
+	/*background-color: #FFFFFF;*/
 }
 #header {
 	margin : 0 -1px;
+	background-color: #F7F7F7;
+}
+#header .slogan{
+	color: #666;
 }
 #bg {
 	height : 36px;
-	background : url(../images/bg.gif) repeat-x;
+	background : url(../images/head_bg.gif) repeat-x;
 	border-left: 1px solid #F0E9EB;
 	border-right: 1px solid #F0E9EB;
 }
@@ -151,16 +156,25 @@ input, textarea{
 	margin : 20px auto;
 }
 #logo {
-	margin-bottom : 45px;
+	padding-bottom : 45px;
 	padding-left: 20px;
 }
 #body_content{
 	padding-top:20px;
 }
+.logo .logo-image,
+.logo .logo-text{
+	float: left;
+}
+.logo-text{
+	padding-left: 60px;
+	padding-top: 15px;
+}
+.logo-main-text{
+}
 .logotxt1 {
 	font : normal 24px Georgia, serif;
 	color : #D83B10;
-	margin : 10px 0 0 15px;
 }
 .logotxt2 {
 	font : normal 24px Georgia, serif;
@@ -181,6 +195,7 @@ input, textarea{
 	cursor: text;
 }
 #footer {
+	color: #666;
 	background : #f7f7f7;
 	border-top : 1px solid #f0e9eb;
 	padding : 10px 15px;
@@ -196,5 +211,5 @@ input, textarea{
 	width : 218px;
 	margin : 0 auto;
 	padding : 10px 25px;
-	background : url(../images/shadow.jpg) no-repeat top;
+	/*background : url(../images/shadow.jpg) no-repeat top;*/
 }

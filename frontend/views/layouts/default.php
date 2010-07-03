@@ -19,10 +19,14 @@
   <div id="header">
     <div id="bg"></div>
      <div id="logo">
-	     <img src="<?=$base_url;?>images/logo-2.jpg" alt="unun" width="48" height="72" align="left" />
-	     <div style="padding-top:30px;">
-		     <span class="logotxt1">unun</span><span class="logotxt2"> Restaurant</span><br />
-		     <span style="margin-left:15px;font-size:10px;">Your Slogan goes here</span>
+     	 <div class="logo-image">
+	     	<a href="<?=$site_url;?>home"><img src="<?=$base_url;?>images/logo-2.jpg" border="0" alt="unun" width="48" height="72" align="left" /></a>
+	     </div>
+	     <div class="logo-text">
+		     <div class="logo-main-text">
+		     	<span class="logotxt1">unun</span><span class="logotxt2"> Restaurant</span><br />
+		     </div>
+		     <div class="slogan">Your Slogan goes here</div>
 	     </div>
 	     <?php if(isset($_SESSION['http_auth']) && $_SESSION['http_auth']=='arif'):?>
 	     	<a href="<?php echo site_url()?>/home/http_logout/">Logout</a>
