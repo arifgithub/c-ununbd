@@ -19,7 +19,7 @@
  		$this->name=$this->router->class;
  		$this->method=$this->router->method;
  		$this->_myCI_init();
- 		$this->http_authentication();
+ 		//$this->http_authentication();
  	}
  	function _myCI_init()
  	{

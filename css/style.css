@@ -1,9 +1,13 @@
 /*** Global Settings ****/
-body {
-	font : normal 12px/1.6em Arial, Helvetica, sans-serif;
+html, body {
+	background: url("../images/base_bg.gif") repeat-x scroll center top #B42D50;
 	color : #2a3845;
-	margin : 0;padding : 0;
-	background:#FFFFFF;
+	font-family:tahoma;
+	font-size:12px;
+	height:100%;
+	margin:0;
+	padding:0;
+	width:100%;
 }
 p { 
 	margin : 0;padding : 0;
@@ -106,6 +110,7 @@ input, textarea{
 	width : 776px;
 	border-left : 1px solid #f0e9eb;
 	border-right : 1px solid #f0e9eb;
+	background-color: #FFFFFF;
 }
 #header {
 	margin : 0 -1px;
