@@ -1,0 +1,522 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+    background:url(images/background_body.gif) repeat;
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:15px;
+    color:#FFFFFF;
+}
+
+h1{
+    font-size:20px;
+    font-weight:bold;
+}
+
+h2{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.containerOuter{
+    width:960px;
+    margin:0 auto;
+}
+/*----------------------- HEADER */
+.header{
+    width:960px;
+    height:87px;
+    background:url(images/bg_white.png) repeat;
+    position: relative;
+}
+
+.logo{
+    width:114px;
+    height:87px;
+    float:left;
+    background:url(images/unun-logo.png) no-repeat;
+    position: absolute;
+    margin: 10px 20px;
+}
+/*----------------------- BREADCRUMB START */
+.breadcrumb{
+    width:600px;
+    height:44px;
+    margin:20px 0 0 15px;
+    float:left;
+}
+.breadcrumb{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:10px;
+    color:#81aba4;
+}
+.breadcrumb a{
+    color:#81aba4;
+    text-decoration:none;
+    margin:0 6px 0 6px;
+}
+.breadcrumb a:hover{
+    color:#5d7b76;
+    text-decoration:none;
+}
+/*----------------------- BREADCRUMB END */
+
+/*******************************************/
+
+.containerNavigation{
+    width:830px;
+    height:23px;
+    float:left;
+    position: relative;
+    margin-left: 100px;
+    margin-top: -10px;
+}
+
+.containerNavigation li{
+    height:23px;
+    float:left;
+    margin-right: 5px;
+}
+
+.containerNavigation li a{
+    background-color: #B65242;
+    color: #fff;
+    padding-top: 2px;
+    text-decoration: none;
+    display: block;
+    width: 145px;
+    height:17px;
+    display:block;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    /*float:left;*/
+}
+.containerNavigation li a:hover{
+    background-color: #9E1701;
+}
+/*******************************************/
+.rightBarNavigation{
+    position: relative;
+    margin-left: 39px;
+}
+
+.rightBarNavigation li{
+    height:23px;
+    clear: both;
+}
+
+.rightBarNavigation li a{
+    background-color: #9E1701;
+    color: #fff;
+    padding-top: 2px;
+    text-decoration: none;
+    display: block;
+    width: 190px;
+    height:17px;
+    display:block;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    /*float:left;*/
+}
+.rightBarNavigation li a:hover{
+    background-color: #BF2F17;
+}
+
+/*******************************************/
+
+#btRegalos{
+    width:74px;
+    background:url(images/navigation.png) 0 top;
+}
+#btRegalos:hover{
+    width:74px;
+    background:url(images/navigation.png) 0 bottom;
+}
+#btEventos{
+    width:70px;
+    background:url(images/navigation.png) 772px top;
+}
+#btEventos:hover{
+    width:70px;
+    background:url(images/navigation.png) 772px bottom;
+}
+#btComoComprar{
+    width:113px;
+    background:url(images/navigation.png) 702px top;
+}
+#btComoComprar:hover{
+    width:113px;
+    background:url(images/navigation.png) 702px bottom;
+}
+#btGastosEnvio{
+    width:118px;
+    background:url(images/navigation.png) 589px top;
+}
+#btGastosEnvio:hover{
+    width:118px;
+    background:url(images/navigation.png) 589px bottom;
+}
+#btFechasEspeciales{
+    width:132px;
+    background:url(images/navigation.png) 471px top;
+}
+#btFechasEspeciales:hover{
+    width:132px;
+    background:url(images/navigation.png) 471px bottom;
+}
+#btCompraRapida{
+    width:115px;
+    background:url(images/navigation.png) 339px top;
+}
+#btCompraRapida:hover{
+    width:115px;
+    background:url(images/navigation.png) 339px bottom;
+}
+
+/*----------------------- CONTENT TOTAL */
+.containerContentTotal{
+    width:960px;
+}
+.containerContentTotalTop{
+    width:960px;
+    height:34px;
+    background:url(images/bg_totalcontent.png) 0 0 repeat-x;
+}
+.containerContentTotalTopCeleste{
+    width:960px;
+    height:34px;
+    background:url(images/bg_totalcontentceleste.png) 0 0 repeat-x;
+}
+
+/*----------------------- HOME PICS */
+.HomePicsContainer{
+    width:840px;
+    height:380px;
+    padding:40px 0 0 120px;
+    background:#8AC7DA;
+}
+.HomePicsContainer li{
+    width:200px;
+    height:300px;
+    float:left;
+    margin:0 60px 0 0;
+    text-align:center;
+    font-size:20px;
+}
+/*----------------------- CELEBRACIONES PICS */
+.CelebracionesPicsContainer{
+    width:840px;
+    height:380px;
+    padding:40px 0 0 120px;
+    background:#8AC7DA;
+}
+#CelebracionesPicsContainerCeleste{
+    background:#A8DDE5;
+}
+.CelebracionesPicsContainer li{
+    width:283px;
+    height:300px;
+    float:left;
+    margin:0 137px 0 0;
+    text-align:center;
+    font-size:20px;
+}
+
+
+/*----------------------- CONTENT LEFT */
+.containerContentLeft{
+    width:695px;
+    float:left;
+}
+.containerContentLeftTop{
+    width:695px;
+    height:34px;
+    background:url(images/bg_leftcontent.png) 0 0;
+}
+#containerContentLeftTopCelebraciones{
+    background:url(images/bg_leftcontent_celeb.png) 0 0;
+}
+#containerContentLeftTopRojo{
+    background:url(images/bg_leftcontent_rojo.png) 0 0;
+}
+.contentLeft{
+    width:695px;
+    height:400px;
+    background:#8ac7da;
+}
+#contentLeftCelebColor{
+    background:#a8dde5;
+}
+#contentLeftRojo{
+    background:#9e1701;
+}
+/*----------------------- P R O D U C T    D E T A I L    S T A R T  */
+.productDetailContainer{
+    width:630px;
+    height:300px;
+    /*background:#009999;*/
+    padding:25px 0 0 47px;
+}
+
+.productDetailTop{
+    width:620px;
+    height:200px;
+    /*background:#999900;*/
+    /*padding:50px 0 0 50px;*/
+}
+
+.productDetailPicture{
+    width:320px;
+    height:200px;
+    /*background:#FF0000;*/
+    float:left;
+}
+
+.productDetailPicture img{
+    border:2px solid #FFFFFF;
+}
+
+.productDetailText{
+    width:280px;
+    height:100px;
+    float:right;
+    font-size:15px;
+}
+
+.productDetalBottom{
+    width:587px;
+    height:60px;
+    /*background:#99CC00;*/
+}
+
+.productDetailViewContent{
+    width:310px;
+    height:60px;
+    /*background:#993333;*/
+    text-align:center;
+    float:left;
+}
+.productDetailViewContent a{
+    color:#FFFFFF;
+    text-decoration:none;
+}
+.productDetailViewContent a:hover{
+    text-decoration:underline;
+}
+.productDetailViewContent h2{
+    text-align:left;
+}
+
+.productDetailPrice{
+    width:250px;
+    height:60px;
+    /*background:#CC6699;*/
+    float:right;
+    text-align:center;
+}
+
+#btReservarAhora{
+    width:139px;
+    height:32px;
+    margin:0 auto;
+    margin-top:5px;
+    padding:5px 0 0;
+    display:block;
+    background:url("images/bg_bt_reserva.png") no-repeat scroll 0 0 transparent;
+    text-align:center;
+    color:#FFFFFF;
+    text-decoration:none;
+}
+#btReservarAhora:hover{
+    text-decoration:underline;
+}
+
+/*----------------------- P R O D U C T    D E T A I L    E N D  */
+/*----------------------- SIDEBAR */
+.sidebarRight{
+    width:265px;
+    float:right;
+}
+.sidebarRightTop{
+    width:265px;
+    height:34px;
+    background:url(images/bg_sidebarright.png) 0 0;
+}
+#sidebarRightTopCelebraciones{
+    background:url(images/bg_sidebarright_celeb.png) 0 0;
+}
+#sidebarRightTopRojo{
+    background:url(images/bg_sidebarright_rojo.png) 0 0;
+}
+.contentSidebar{
+    width:265px;
+    height:400px;
+    background:#B1D9E6;
+}
+#contentSidebarCelebColor{
+    background:#c5e8ee;
+}
+#contentSidebarRojo{
+    background:#b65041;
+}
+/*----------------------- BOTTOM BAR */
+.bottomBar{
+    width:960px;
+    height:67px;
+    background-color: #ECF6F9;
+    /*background:url(images/bg_bottom.png) repeat;*/
+}
+#bottomBarCelebrar{
+    background:url(images/bg_bottom_celebrar.png) repeat;
+}
+#bottomBarRegalar{
+    /*background:url(images/bg_bottom_regalar.png) repeat;*/
+}
+.bottomBar ul{
+    width:300px;
+    height:23px;
+    margin-left:115px;
+    padding-top:20px;
+}
+.bottomBar ul li{
+    height:23px;
+    float:left;
+}
+.bottomBar ul li a{
+    height:23px;
+    display:block;
+}
+
+.bottomBar ul li a span{
+    display:none;
+}
+#btNosotros{
+    width:68px;
+    background:url(images/navigationbottom.png) 0 top;
+    margin-right:50px;
+}
+#btNosotros:hover{
+    width:68px;
+    background:url(images/navigationbottom.png) 0 bottom;
+    margin-right:50px;
+}
+#btHome{
+    width:67px;
+    background:url(images/navigationbottom.png) 68px top;
+}
+#btHome:hover{
+    width:67px;
+    background:url(images/navigationbottom.png) 68px bottom;
+}
+
+
+/*----------------------- FOOTER */
+.footer{
+    width:960px;
+    height:30px;
+    margin-top:5px;
+    font-family:Arial;
+    font-size:10px;
+    color:#000000;
+}
+.copyright{
+    width:300px;
+    float:left;
+}
+.bottomNav{
+    width:300px;
+    float:right;
+    text-align:right;
+}
+.bottomNav a{
+    color:#000000;
+    text-decoration:none;
+}
+.bottomNav a:hover{
+    color:#000000;
+    text-decoration:underline;
+}
+
+/*----------------------- SLIDESHOW */
+#slideshow {
+    background:#C5E8EE;
+    height:110px;
+    margin:0 0 0 -42px;
+    position:relative;
+    width:685px;
+}
+#slideshow #slidesContainer {
+    margin:0 auto;
+    width:560px;
+    /*  height:263px;*/
+    height:110px;
+    overflow:auto; /* allow scrollbar */
+    position:relative;
+}
+#slideshow #slidesContainer .slide {
+    margin:0 auto;
+    width:584px; /* reduce by 20 pixels of #slidesContainer to avoid horizontal scroll */
+    /*  height:263px;*/
+    height:110px;
+}
+
+/** 
+ * Slideshow controls style rules.
+*/
+.control {
+    display:block;
+    width:39px;
+    /*  height:263px;*/
+    height:110px;
+    text-indent:-10000px;
+    position:absolute;
+    cursor: pointer;
+}
+#leftControl {
+    top:0;
+    left:0;
+    background:transparent url(images/btn_prev.gif) no-repeat 0 0;
+}
+#rightControl {
+    top:0;
+    right:0;
+    background:transparent url(images/btn_next.gif) no-repeat 0 0;
+}
+
+.slide ul{
+    margin:0 auto;
+}
+.slide ul li{
+    float:left;
+    margin:0 114px 0 0;
+}
+
+/*------------------ DROP DOWN MENU ------------*/
+
+#submenu{
+    font-family:Georgia, "Times New Roman", Times, serif;
+    font-size:11px;
+    margin-left:12px;
+}
+#submenu li{
+    height:10px;
+    padding:2px 2px 5px 3px;
+    background:url(images/bg_submenu.png) repeat;
+}
+li#impar{
+    background:#CAE8FF;
+}
+
+#submenu li a{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+    color:#8C4211;
+}
+#submenu li a:hover{
+    color:#8AC7DA;
+}

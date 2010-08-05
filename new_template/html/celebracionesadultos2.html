@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Algo dulce</title>
+<link href="reset.css" rel="stylesheet" type="text/css" media="all" />
+<link href="styles.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/dropdownmenu.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  var currentPosition = 0;
+  var slideWidth = 560;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+</script>
+</head>
+
+<body>
+<div class="containerOuter">
+	<div class="header">
+    	<div class="logo">
+        	<!--<a href="/"><img src="images/logo.png" /></a>-->
+        </div>
+        <div class="breadcrumb">
+        	Estás Acá:<a href="#">Home</a>><a href="#">Celebraciones para Adultos</a>><a href="#">Masas dulces</a>
+        </div>
+        <ul class="containerNavigation">
+        	<li><a href="#" id="btRegalos"><span>Eventos</span></a>
+            	<ul id="submenu">
+                	<li id="impar"><a href="#">Decodesayunos Expresión</a></li>
+                	<li><a href="#">Decodesayunos Pasión</a></li>
+                	<li id="impar"><a href="#">Decodesayunos Tierra</a></li>
+                	<li><a href="#">Alzada de Galletitas</a></li>
+                	<li id="impar"><a href="#">Torres de Cupcakes</a></li>
+				</ul>
+            </li>
+        	<li><a href="#" id="btEventos"><span>Eventos</span></a>
+            	<ul id="submenu">
+                	<li id="impar"><a href="#">Infantiles</a></li>
+                	<li><a href="#">Adultos</a></li>
+				</ul>
+            </li>
+        	<li><a href="#" id="btComoComprar"><span>Como comprar</span></a></li>
+        	<li><a href="#" id="btGastosEnvio"><span>Gastos de envio</span></a></li>
+        	<li><a href="#" id="btFechasEspeciales"><span>Fechas especiales</span></a></li>
+        	<li><a href="#" id="btCompraRapida"><span>Compra rapida</span></a></li>
+        </ul>
+    </div>
+    <div class="containerContentLeft">
+    	<div class="containerContentLeftTop" id="containerContentLeftTopCelebraciones">
+        </div>
+        <div class="contentLeft" id="contentLeftCelebColor">
+        	<div class="productDetailContainer">
+            	<div class="productDetailTop">
+                    <div class="productDetailPicture">
+                    	<img src="images/celebracionesadultos.jpg" />                    </div>
+              <div class="productDetailText">
+                    	<h1>Celebraciones para Adultos</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue facilisis nibh, sit amet rutrum massa viverra sit amet. Nullam quis scelerisque diam. Fusce eget ligula vel diam aliquam feugiat.</p>
+                        <br />
+                        <a href="#" id="btReservarAhora">Consulta ahora!</a>
+                    </div>
+                </div>
+                <div class="productDetalBottom">
+                	<div class="productDetailViewContent">
+                    	<h2>Galletitas artesanales para Adultos</h2>
+                    </div>
+                    <div class="productDetailPrice" style="display:none;">
+                    	Doble $AR 429
+                        <a href="#" id="btReservarAhora">Reservar ahora</a>
+                    </div>
+                </div>
+                
+  <!-- Slideshow HTML -->
+  <div id="slideshow">
+    <div id="slidesContainer">
+        <div class="slide">
+        	<ul>
+            	<li><img src="images/pic_slide_1.png" /></li>
+            	<li><img src="images/pic_slide_2.png" /></li>
+            	<li style="margin:0;"><img src="images/pic_slide_3.png" /></li>
+			</ul>
+        </div>
+        <div class="slide">
+        	<ul>
+            	<li><img src="images/pic_slide_1.png" /></li>
+            	<li><img src="images/pic_slide_2.png" /></li>
+            	<li style="margin:0;"><img src="images/pic_slide_3.png" /></li>
+			</ul>
+        </div>
+        <div class="slide">
+        	<ul>
+            	<li><img src="images/pic_slide_1.png" /></li>
+            	<li><img src="images/pic_slide_2.png" /></li>
+            	<li style="margin:0;"><img src="images/pic_slide_3.png" /></li>
+			</ul>
+        </div>
+    </div>
+  </div>
+  <!-- Slideshow HTML -->
+                
+                
+                
+                
+                
+            </div><br style="clear:both" /><!--------------------------------- REVISAR ESTE CLEAR ----------------->
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+    <div class="sidebarRight">
+    	<div class="sidebarRightTop" id="sidebarRightTopCelebraciones">
+        </div>
+        <div class="contentSidebar" id="contentSidebarCelebColor">
+        	<!-- <div style="width:100px; height:100px; background:#FF0000;"></div> -->
+        </div>
+    </div><br style="clear:both;" />
+    <div class="bottomBar" id="bottomBarCelebrar">
+		<ul>
+        	<li><a href="#" id="btNosotros"><span>Nosotros</span></a></li>
+        	<li><a href="#" id="btHome"><span>Catalogo</span></a></li>
+        </ul>
+    </div>
+    <div class="footer">
+    	<div class="copyright">
+        	©2010 Algodulce
+        </div>
+        <div class="bottomNav">
+        	<a href="#">Home</a> &nbsp;|&nbsp; <a href="#">Términos</a> &nbsp;|&nbsp; <a href="#">Privacidad</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
