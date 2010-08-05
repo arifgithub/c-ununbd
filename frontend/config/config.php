@@ -15,6 +15,8 @@ if($_SERVER['SERVER_NAME']=='localhost' && $_SERVER['SERVER_PORT']==80){
 	$config['base_url']	= "http://localhost/public_html/c_projects/Auny/ununbd/";
 }elseif($_SERVER['SERVER_NAME']=='localhost'){
 	$config['base_url']	= "http://localhost:83/c_projects/Auny/ununbd/";
+}elseif($_SERVER['SERVER_NAME']=='192.168.1.105'){
+	$config['base_url']	= "http://192.168.1.105/public_html/c_projects/Auny/ununbd/";
 }else{
 	$config['base_url']	= "http://{$_SERVER['HTTP_HOST']}/";
 }
@@ -164,7 +166,7 @@ $config['directory_trigger'] 	= 'd'; // experimental not currently in use
 | Error Logging Threshold
 |--------------------------------------------------------------------------
 |
-| If you have enabled error logging, you can set an error threshold to 
+| If you have enabled error logging, you can set an error threshold to
 | determine what gets logged. Threshold options are:
 | You can enable error logging by setting a threshold over zero. The
 | threshold determines what gets logged. Threshold options are:

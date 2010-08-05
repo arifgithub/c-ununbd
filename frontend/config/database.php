@@ -42,6 +42,10 @@ if($_SERVER['SERVER_NAME']=='localhost'){
 	$db['default']['username'] = "root";
 	$db['default']['password'] = "";
 	$db['default']['database'] = "ununbd";
+}elseif($_SERVER['SERVER_NAME']=='192.168.1.105'){
+	$db['default']['username'] = "root";
+	$db['default']['password'] = "";
+	$db['default']['database'] = "ununbd";
 }else{
 	$db['default']['username'] = "ununbd_dbuser";
 	$db['default']['password'] = "dbadmin1234";
